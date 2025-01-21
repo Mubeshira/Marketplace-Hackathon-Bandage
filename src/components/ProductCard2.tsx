@@ -51,7 +51,7 @@ function ProductCard2() {
       <button onClick={() => setFilter("")} className='bg-[#23A6F0] text-white px-4 py-2 rounded-md'>All</button>
         <button onClick={() => setFilter("electronics")} className='bg-[#23A6F0] text-white px-4 py-2 rounded-md mr-2'>Electronics</button>
         <button onClick={() => setFilter("jewelery")} className='bg-[#23A6F0] text-white px-4 py-2 rounded-md mr-2'>Jewelry</button>
-        <button onClick={() => setFilter("men's clothing")} className='bg-[#23A6F0] text-white px-4 py-2 rounded-md mr-2'>Men's Clothing</button>
+        <button onClick={() => setFilter("mens clothing")} className='bg-[#23A6F0] text-white px-4 py-2 rounded-md mr-2'>Mens Clothing</button>
        
       </div>
 

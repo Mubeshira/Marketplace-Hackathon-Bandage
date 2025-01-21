@@ -37,7 +37,7 @@ function Pricing() {
             <div className='w-[633px] h-[100px] flex items-center flex-col justify-center mt-[48px] '>
                 <h1 className='font-bold text-[40px] text-[#252B42] font-Montserrat'>Pricing</h1>
                 <pre className='text-[14px] text-[#737373] font-Montserrat'>Problems trying to resolve the conflict between </pre>
-                <pre className='text-[14px] text-[#737373] font-Montserrat'> the two major realms of Classical physics: Newtonian mechanics </pre>
+                <pre className='text-[14px] text-[#737373] font-Montserrat'> the two major realms of Classical physics Newtonian mechanics </pre>
 
             </div>
             <div className='w-[311px] h-[44px] flex    items-center  mt-[48px] '>
@@ -190,7 +190,7 @@ function Pricing() {
               </AccordionItem>
             </Accordion>
             <div className="text-center mt-8">
-              <p className="text-gray-500">Haven't got your answer? Contact our support</p>
+              <p className="text-gray-500">Havent got your answer? Contact our support</p>
             </div>
           </div>
         </section>

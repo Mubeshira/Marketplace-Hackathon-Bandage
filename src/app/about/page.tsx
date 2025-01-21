@@ -21,7 +21,7 @@ export default function LandingPage() {
             <p className="text-primary font-medium">ABOUT COMPANY</p>
             <h2 className="text-4xl md:text-5xl font-bold">ABOUT US</h2>
             <p className="text-muted-foreground">
-              We know how large objects will act, but things on a small scale
+              We know how large objects will act but things on a small scale
             </p>
             <Button className="bg-[#26A6F0]">Get Quote Now</Button>
           </div>
@@ -137,7 +137,7 @@ export default function LandingPage() {
           <div className="space-y-6 max-w-md">
             <p className="font-medium">WORK WITH US</p>
             <h2 className="text-3xl md:text-4xl font-bold">
-              Now Let's grow Yours
+              Now Lets grow Yours
             </h2>
             <p className="text-primary-foreground/80">
               The gradual accumulation of information about atomic and

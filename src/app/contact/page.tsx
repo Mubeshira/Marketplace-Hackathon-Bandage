@@ -80,8 +80,8 @@ function Contact() {
 
         <div className='max-w-screen-xl mx-auto flex flex-col items-center mt-8 mb-16'>
           <PiArrowBendRightDownBold size={72} color='#23A6F0' />
-          <h1 className='font-bold text-lg text-[#252B42]'>WE Can't WAIT TO MEET YOU</h1>
-          <h1 className='font-bold text-5xl text-[#252B42]'>Let's Talk</h1>
+          <h1 className='font-bold text-lg text-[#252B42]'>WE Cant WAIT TO MEET YOU</h1>
+          <h1 className='font-bold text-5xl text-[#252B42]'>Lets Talk</h1>
           <Button className='bg-[#23A6F0] text-white hover:bg-slate-300 p-3 mt-4'>Try it free now</Button>
         </div>
         

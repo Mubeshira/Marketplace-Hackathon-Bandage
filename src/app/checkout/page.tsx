@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
+
 import {
   Select,
   SelectContent,
@@ -65,7 +65,7 @@ export default function CheckoutForm() {
           <div className="space-y-4">
             <h2 className="text-xl font-medium">How would you like to get your order?</h2>
             <p className="text-sm text-gray-500">
-              Customs regulation  require a copy of the recipient&apos;s KYC. The address on the KYC needs to
+              Customs regulation  require a copy of the recipients KYC. The address on the KYC needs to
               match the shipping address.
             </p>
             <Button variant="outline" className="w-full justify-start gap-4 rounded-xl border-2 py-6">
@@ -112,7 +112,7 @@ export default function CheckoutForm() {
           {/* Payment */}
           <div className="space-y-4">
             <Button className="w-full rounded-full py-6" onClick={handlePayment}>
-              Let's Pay
+              Lets Pay
             </Button>
           </div>
         </div>
