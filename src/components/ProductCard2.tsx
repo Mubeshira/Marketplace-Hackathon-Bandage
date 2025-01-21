@@ -157,7 +157,7 @@ export default async function ProductCard2() {
       {/* Product Cards */}
       <div className="w-full py-10">
         <h1 className="font-bold text-5xl text-[#252B42] flex justify-center mb-14 mt-9">
-          Popular Products
+          Popular Productssssss
         </h1>
         <div className="mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 mt-6 bg-slate-100">
           {res.map((pic: Card, index: number) => (
