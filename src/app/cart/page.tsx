@@ -205,6 +205,7 @@
 
 
 // code 
+
 "use client";
 
 import Image from "next/image";
@@ -213,8 +214,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState, Suspense } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 
 interface IProduct {
@@ -227,33 +228,40 @@ interface IProduct {
 
 export default function ShoppingCart() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [cartItems, setCartItems] = useState<IProduct[]>([]);
 
+  // Handle client-side-only actions
   useEffect(() => {
-    // Get existing cart items from localStorage
     const cart = localStorage.getItem("cart");
     const updatedCart = cart ? JSON.parse(cart) : [];
 
-    // Get product details from URL query parameters
-    const name = searchParams.get("name");
-    const price = searchParams.get("price");
-    const description = searchParams.get("description");
-    const image = searchParams.get("image");
+    // Check if URL contains product data
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    const price = params.get("price");
+    const description = params.get("description");
+    const image = params.get("image");
 
-    // Add new item to cart if details are present in the query
     if (name && price && description && image) {
-      const isDuplicate = updatedCart.some((item: IProduct) => item.name === name);
+      const isDuplicate = updatedCart.some(
+        (item: IProduct) => item.name === name
+      );
       if (!isDuplicate) {
-        updatedCart.push({ name, price, description, image, quantity: 1 });
+        updatedCart.push({
+          name,
+          price,
+          description,
+          image,
+          quantity: 1,
+        });
       }
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       setCartItems(updatedCart);
-      router.replace("/cart"); // Remove query parameters from URL
+      router.replace("/cart"); // Clean up query params
     } else {
       setCartItems(updatedCart);
     }
-  }, [searchParams, router]);
+  }, [router]);
 
   // Remove an item from the cart
   const handleRemoveItem = (index: number) => {
@@ -265,7 +273,7 @@ export default function ShoppingCart() {
 
   // Update item quantity
   const handleQuantityChange = (index: number, quantity: number) => {
-    if (quantity < 1) return; // Prevent zero or negative quantities
+    if (quantity < 1) return; // Prevent invalid quantities
     const updatedCart = [...cartItems];
     updatedCart[index].quantity = quantity;
     localStorage.setItem("cart", JSON.stringify(updatedCart));
@@ -273,7 +281,7 @@ export default function ShoppingCart() {
   };
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <>
       <Header />
       <div className="container mx-auto px-4 py-8 mt-[99px]">
         {/* Free Delivery Banner */}
@@ -399,6 +407,6 @@ export default function ShoppingCart() {
           </div>
         </div>
       </div>
-    </Suspense>
+    </>
   );
 }
