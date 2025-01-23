@@ -37,11 +37,11 @@ async function ProductCard() {
                <Link href={"/shops"}> <Image
                   src={res.productCard[index].productCardImage}
                   alt={product.name}
-                  width={239}
-                  height={472}
+                  width={700}
+                  height={300}
                   className="rounded-lg object-cover  hover:scale-105 transition-transform duration-300 ease-in-out"
                 /></Link>
-                <div className="flex flex-col items-center text-center mt-4">
+                <div className="flex flex-col items-center text-center mt-10">
                   <h3 className="font-Montserrat font-bold text-base sm:text-lg text-gray-800">
                     {res.productCard[index].productCardHeading}
                   </h3>
