@@ -1,107 +1,182 @@
-import React from 'react'
+// import React from 'react'
 
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+// import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+
+// export default function Footer() {
+//     return (
+//         <footer className="bg-white absolute  left-[300px]">
+//             {/* Top Section */}
+//              <section className=" py-10">
+//                 <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+//                     <div className="flex flex-col  ">
+//                         <h1 className="text-[#252b42] text-2xl font-bold leading-loose tracking-tight">Bandage</h1>
+//                     </div>
+//                     <div className="flex gap-6">
+//                     <FaFacebookF color='blue' />
+//                     <FaInstagram color='blue' />
+//                     <FaTwitter color='blue' />
+//                     </div>
+//                 </div>
+//             </section> 
+  
+//             {/* Divider */}
+//              <div className="border-t border-[#e6e6e6] " /> 
+  
+//             {/* Main Footer Content */}
+//              <section className=" py-12">
+//                 <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
+//                     {/* Company Info */}
+//                     <div>
+//                         <h2 className="text-[#252b42] text-base font-bold">Company Info</h2>
+//                         <nav className="flex flex-col gap-2.5 mt-3">
+//                             <a href="#" className="text-[#727272] text-sm font-bold">About Us</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Careers</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">We Are Hiring</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Blog</a>
+//                         </nav>
+//                     </div> 
+  
+//                     {/* Legal */}
+//                      <div>
+//                         <h2 className="text-[#252b42] text-base font-bold">Legal</h2>
+//                         <nav className="flex flex-col gap-2.5 mt-3">
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Terms of Service</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Privacy Policy</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Cookies</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Refund Policy</a>
+//                         </nav>
+//                     </div>
+   
+//                     {/* Features */}
+//                     <div>
+//                         <h2 className="text-[#252b42] text-base font-bold">Features</h2>
+//                         <nav className="flex flex-col gap-2.5 mt-3">
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Business Marketing</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">User Analytics</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Live Chat</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Unlimited Support</a>
+//                         </nav>
+//                     </div> 
+  
+//                     {/* Resources */}
+//                      <div>
+//                         <h2 className="text-[#252b42] text-base font-bold">Resources</h2>
+//                         <nav className="flex flex-col gap-2.5 mt-3">
+//                             <a href="#" className="text-[#727272] text-sm font-bold">iOS & Android</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Watch a Demo</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">Customers</a>
+//                             <a href="#" className="text-[#727272] text-sm font-bold">API</a>
+//                         </nav>
+//                     </div> 
+  
+//                     {/* Get in Touch */}
+//                      <div>
+//                         <h2 className="text-[#252b42] text-base font-bold">Get In Touch</h2>
+//                         <div className="mt-3">
+//                             <div className="relative mb-4">
+//                                 <input
+//                                     type="email"
+//                                     className="w-[221px] h-12 px-4 border border-[#e6e6e6] rounded-lg bg-[#f8f8f8] text-[#727272] text-sm font-normal"
+//                                     placeholder="Your Email"
+//                                 />
+//                                 <button className="absolute right-0 top-0 h-12 px-4 bg-[#23a6f0] text-white text-sm font-normal rounded-r-lg">
+//                                     Subscribe
+//                                 </button>
+//                             </div>
+//                             <p className="text-[#727272] text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </section> 
+  
+//             {/* Bottom Section */}
+//              <section className="bg-[#f9f9f9] py-4">
+//                 <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+//                     <p className="text-[#727272] text-sm font-bold">Made with love by Finland. All rights reserved.</p>
+//                     <div className="flex gap-4">
+                       
+//                     </div>
+//                 </div>
+//             </section>
+//         </footer>
+//     );
+//   } 
+
+
+
+
+import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export default function Footer() {
-    return (
-        <footer className="bg-white absolute  left-[300px]">
-            {/* Top Section */}
-             <section className=" py-10">
-                <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-                    <div className="flex flex-col  ">
-                        <h1 className="text-[#252b42] text-2xl font-bold leading-loose tracking-tight">Bandage</h1>
-                    </div>
-                    <div className="flex gap-6">
-                    <FaFacebookF color='blue' />
-                    <FaInstagram color='blue' />
-                    <FaTwitter color='blue' />
-                    </div>
-                </div>
-            </section> 
-  
-            {/* Divider */}
-             <div className="border-t border-[#e6e6e6] " /> 
-  
-            {/* Main Footer Content */}
-             <section className=" py-12">
-                <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
-                    {/* Company Info */}
-                    <div>
-                        <h2 className="text-[#252b42] text-base font-bold">Company Info</h2>
-                        <nav className="flex flex-col gap-2.5 mt-3">
-                            <a href="#" className="text-[#727272] text-sm font-bold">About Us</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Careers</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">We Are Hiring</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Blog</a>
-                        </nav>
-                    </div> 
-  
-                    {/* Legal */}
-                     <div>
-                        <h2 className="text-[#252b42] text-base font-bold">Legal</h2>
-                        <nav className="flex flex-col gap-2.5 mt-3">
-                            <a href="#" className="text-[#727272] text-sm font-bold">Terms of Service</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Privacy Policy</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Cookies</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Refund Policy</a>
-                        </nav>
-                    </div>
-   
-                    {/* Features */}
-                    <div>
-                        <h2 className="text-[#252b42] text-base font-bold">Features</h2>
-                        <nav className="flex flex-col gap-2.5 mt-3">
-                            <a href="#" className="text-[#727272] text-sm font-bold">Business Marketing</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">User Analytics</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Live Chat</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Unlimited Support</a>
-                        </nav>
-                    </div> 
-  
-                    {/* Resources */}
-                     <div>
-                        <h2 className="text-[#252b42] text-base font-bold">Resources</h2>
-                        <nav className="flex flex-col gap-2.5 mt-3">
-                            <a href="#" className="text-[#727272] text-sm font-bold">iOS & Android</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Watch a Demo</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">Customers</a>
-                            <a href="#" className="text-[#727272] text-sm font-bold">API</a>
-                        </nav>
-                    </div> 
-  
-                    {/* Get in Touch */}
-                     <div>
-                        <h2 className="text-[#252b42] text-base font-bold">Get In Touch</h2>
-                        <div className="mt-3">
-                            <div className="relative mb-4">
-                                <input
-                                    type="email"
-                                    className="w-[221px] h-12 px-4 border border-[#e6e6e6] rounded-lg bg-[#f8f8f8] text-[#727272] text-sm font-normal"
-                                    placeholder="Your Email"
-                                />
-                                <button className="absolute right-0 top-0 h-12 px-4 bg-[#23a6f0] text-white text-sm font-normal rounded-r-lg">
-                                    Subscribe
-                                </button>
-                            </div>
-                            <p className="text-[#727272] text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                </div>
-            </section> 
-  
-            {/* Bottom Section */}
-             <section className="bg-[#f9f9f9] py-4">
-                <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-                    <p className="text-[#727272] text-sm font-bold">Made with love by Finland. All rights reserved.</p>
-                    <div className="flex gap-4">
-                       
-                    </div>
-                </div>
-            </section>
-        </footer>
-    );
-  } 
-
-
-
-
+  return (
+    <footer className="bg-gray-50 p-8">
+      <div className="container py-12 md:py-16">
+        <div className="grid gap-8 md:grid-cols-5">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Company Info</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">About Us</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Carrier</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">We are hiring</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Blog</a></li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Legal</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">About Us</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Carrier</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">We are hiring</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Blog</a></li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Features</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Business Marketing</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">User Analytics</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Live Chat</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Unlimited Support</a></li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Resources</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">IOS & Android</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Watch a Demo</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Customers</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">API</a></li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Get In Touch</h3>
+            <div className="flex space-x-2">
+              <Input placeholder="Your Email" type="email" />
+              <Button>Subscribe</Button>
+            </div>
+            <p className="text-xs text-muted-foreground">Save time and boost productivity</p>
+          </div>
+        </div>
+        <div className="mt-12 flex flex-col items-center justify-between space-y-4 border-t pt-8 md:flex-row md:space-y-0">
+          <p className="text-sm text-muted-foreground">Made With Love By Finland All Right Reserved</p>
+          <div className="flex space-x-4">
+            <a href="#" className="text-blue-600 hover:text-blue-800">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-pink-600 hover:text-pink-800">
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-sky-500 hover:text-sky-700">
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-blue-600 hover:text-blue-800">
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}

@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
 
 function NewHeader() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -93,6 +94,7 @@ function NewHeader() {
               <h6 className="text-lg font-semibold text-[#252B42]">Home</h6>
             </Link>
            <Link href={"/shops"}> <h6 className="text-lg font-semibold text-[#BDBDBD]">Shop</h6></Link>
+           <UserButton/>
           </nav>
         </div>
       )}

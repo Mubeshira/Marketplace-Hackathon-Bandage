@@ -10,13 +10,20 @@ const config: Config = {
   theme: {
   	extend: {
   		screens: {
-  			exsm: '320px',
-  			xsm: '480px',
-  			sm: '640px',
+  			// exsm: '320px',
+  			// xsm: '480px',
+  			// sm: '640px',
+  			// md: '768px',
+  			// lg: '1024px',
+  			// xl: '1280px',
+  			// '2xl': '1536px'
+			
+  			xsm: '320px',
+  			sm: '425px',
   			md: '768px',
   			lg: '1024px',
   			xl: '1280px',
-  			'2xl': '1536px'
+  			
   		},
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

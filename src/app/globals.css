@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 body{
-  width: 1438px;
+  width: 100%;
+  max-width: 1438px;
   margin: auto;
+  overflow-x: hidden;
 }
 
 @layer base {

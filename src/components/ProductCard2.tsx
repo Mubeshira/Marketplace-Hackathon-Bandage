@@ -147,9 +147,6 @@ export default async function ProductCard2() {
        fetchData();
      }
 
-
-  
-
   return (
     <>
      

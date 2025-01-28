@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 
@@ -18,18 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css"/>
-   </head>
+    
 
       <body className={inter.className}>
-      <Script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"
-          strategy="afterInteractive"/>
-            <div hidden id="snipcart" data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API_KEY} data-config-modal-style="none"></div>
-
+     
         
         
         
@@ -39,6 +34,7 @@ export default function RootLayout({
 
       </body>
     </html>
+    </ClerkProvider >
   );
 }
 // OThiYzRjN2YtNTgxOC00YjA5LWJjMTAtYWMzMWI2MzVhYjM0NjM4NzE4NTUyMzQwMzg2MDYy
