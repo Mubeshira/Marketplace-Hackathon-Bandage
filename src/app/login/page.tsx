@@ -66,7 +66,7 @@ export default function Login() {
                 href="#"
                 className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
               >
-                Forgotten your password?
+                Forgotten your password
               </Link>
             </div>
             <Button type="submit" className="w-full bg-black hover:bg-gray-900 text-xs h-10">
