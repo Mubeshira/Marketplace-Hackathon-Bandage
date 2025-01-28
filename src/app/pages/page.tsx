@@ -1,6 +1,4 @@
-
-
-// src\app\pages\page.tsx
+// // src\app\pages\page.tsx
 import NewHeader from '@/components/NewHeader';
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -16,8 +14,7 @@ function Pages() {
     <>
       <div>
         <NewHeader />
-
-        {/* Breadcrumb Section */}
+         {/* Breadcrumb Section */}
         <div className="w-full h-auto py-4 bg-[#FAFAF2] flex justify-center items-center">
           <div className="w-full max-w-6xl px-4 flex items-center gap-4">
             <div className="font-Montserrat font-bold text-sm sm:text-base text-[#252B42]">
@@ -29,8 +26,7 @@ function Pages() {
             </h6>
           </div>
         </div>
-
-        {/* Product Section */}
+         {/* Product Section */}
         <div className="container mx-auto px-4 py-12 flex flex-col md:flex-row gap-8 font-Montserrat">
           {/* Left Section - Image Slider */}
           <div className="flex-1">
@@ -94,8 +90,7 @@ function Pages() {
               />
             </div>
           </div>
-
-          {/* Right Section - Product Details */}
+         {/* Right Section - Product Details */}
           <div className="flex-1">
             <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
               Floating Phone
@@ -131,14 +126,12 @@ function Pages() {
             <p className="text-sm text-gray-500 mt-2">
               Availability: <span className="text-[#23A6F0] font-medium">In Stock</span>
             </p>
-
-            <p className="text-gray-700 mt-4 text-sm sm:text-base">
+              <p className="text-gray-700 mt-4 text-sm sm:text-base">
               Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
               RELIT official consequent door ENIM RELIT Mollie. Excitation venial
               consequent sent nostrum met.
             </p>
-
-            <div className="mt-6">
+               <div className="mt-6">
               <h3 className="text-sm font-semibold text-gray-700">Color:</h3>
               <div className="flex items-center gap-2 mt-2">
                 <span className="h-6 w-6 rounded-full bg-blue-500 border border-gray-300 cursor-pointer"></span>
@@ -189,129 +182,110 @@ function Pages() {
     ))}
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
+</div>
       {/* Quick box */}
+    
 
+<div className="w-full bg-pink-200 flex flex-col py-6">
+  {/* Tab Section */}
+  <div className="w-full max-w-[1051px] mx-auto mb-6 px-4">
+    <ul className="flex justify-between items-center gap-4 sm:gap-16 lg:gap-[170px] text-center text-[#737373]">
+      <li className="text-sm md:text-base">Description</li>
+      <li className="text-sm md:text-base">Additional Information</li>
+      <li className="text-sm md:text-base">Reviews (0)</li>
+    </ul>
+  </div>
 
-      <div className='w-full h-[572px] bg-pink-200 flex  flex-col'>
-        <div className='w-[1051px] h-[72px] ml-[200px] mb-[41px] '>
-          <ul className='flex mt-10 ml-[200px] gap-[170px] '>
-            <li className='text-[#737373]'>Description</li>
-            <li className='text-[#737373]'>Additional Information</li>
-            <li className='text-[#737373]'>Reviews(0)</li>
-          </ul>
+  {/* Content Section */}
+  <div className="w-full max-w-[1056px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+    {/* Image Section */}
+    <div className="bg-white rounded-lg overflow-hidden">
+      <Image
+        src={"/home.png"}
+        alt=""
+        width={332}
+        height={727}
+        className="w-full h-full object-cover"
+      />
+    </div>
 
-        </div>
-        <div className='w-[1056px] h-[427px]   ml-[192px] grid grid-cols-3 gap-[30px]'>
-          <div className='w-[332px] h-[427px] bg-white '>
-            <Image src={"/home.png"} alt='' width={332} height={427}></Image>
-          </div>
-          {/* Content Section */}
-      <div className="flex w-[332px] h-[427px]">
-         {/* Text Block */}
-         <div className=" w-[332px] space-y-4 flex flex-col gap-[30px]">
-          <h2 className="text-[24px] font-Montserrat font-bold text-gray-800">
-            the quick fox jumps over
-          </h2>
-          <p className="text-[#737373] font-Montserrat font-normal text-[14px] leading-[20px]">
-            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
-            RELIT official consequent door ENIM RELIT Mollie. Excitation venial
-            consequent sent nostrum met.
-          </p>
-          <p className="text-[#737373] font-Montserrat font-normal text-[14px] leading-[20px]">
-            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
-            RELIT official consequent door ENIM RELIT Mollie. Excitation venial
-            consequent sent nostrum met.
-          </p>
-          <p className="text-[#737373] font-Montserrat font-normal text-[14px] leading-[20px]">
-            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
-            RELIT official consequent door ENIM RELIT Mollie. Excitation venial
-            consequent sent nostrum met.
-          </p>
-        </div>
-                </div>
-      {/* List Section */}
-        <div className="space-y-6 flex flex-col  gap-[30px]">
-           {/* First List */}
-           <div>
-            <h3 className="text-[24px] font-semibold font-Montserrat text-gray-800 mb-[20px]">
-              the quick fox jumps over
-            </h3>
-            <ul className="mt-2 space-y-4 text-[#737373] font-Montserrat font-bold text-[14px] leading-[20px]">
-              <li className="flex items-center gap-2">
-              <MdOutlineKeyboardArrowRight />
-                the quick fox jumps over the lazy dog
-              </li>
-              <li className="flex items-center gap-2">
-              <MdOutlineKeyboardArrowRight />
-                the quick fox jumps over the lazy dog
-              </li>
-              <li className="flex items-center gap-2">
-              <MdOutlineKeyboardArrowRight />
-                the quick fox jumps over the lazy dog
-              </li>
-              <li className="flex items-center gap-2">
-              <MdOutlineKeyboardArrowRight />
-                the quick fox jumps over the lazy dog
-              </li>
-            </ul>
-         </div>
-               
-          {/* Second List */}
-          <div>
-            <h3 className="text-[24px] font-bold text-gray-800">
-              the quick fox jumps over
-            </h3>
-            <ul className="mt-2 space-y-4 text-[#737373] font-Montserrat font-bold text-[14px] leading-[20px]">
-             
-              <li className="flex items-center gap-2">
-              <MdOutlineKeyboardArrowRight />
+    {/* Text Section */}
+    <div className="flex flex-col space-y-6 px-2 sm:px-4">
+      <h2 className="text-lg md:text-xl lg:text-2xl font-Montserrat font-bold text-gray-800">
+        The quick fox jumps over
+      </h2>
+      <p className="text-sm md:text-base text-[#737373] font-Montserrat leading-relaxed">
+        Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
+        RELIT official consequent door ENIM RELIT Mollie. Excitation venial
+        consequent sent nostrum met.
+      </p>
+      <p className="text-sm md:text-base text-[#737373] font-Montserrat leading-relaxed">
+        Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
+        RELIT official consequent door ENIM RELIT Mollie. Excitation venial
+        consequent sent nostrum met.
+      </p>
+      <p className="text-sm md:text-base text-[#737373] font-Montserrat leading-relaxed">
+        Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
+        RELIT official consequent door ENIM RELIT Mollie. Excitation venial
+        consequent sent nostrum met.
+      </p>
+    </div>
 
-                the quick fox jumps over the lazy dog
-              </li>
-              <li className="flex items-center gap-2">
-              <MdOutlineKeyboardArrowRight />
-
-                the quick fox jumps over the lazy dog
-              </li>
-              <li className="flex items-center gap-2">
-              <MdOutlineKeyboardArrowRight />
-
-                the quick fox jumps over the lazy dog
-              </li>
-            </ul>
-          </div>
-
-
-
-
-
-
-
+    {/* List Section */}
+    <div className="space-y-6 px-2 sm:px-4">
+      {/* First List */}
+      <div>
+        <h3 className="text-lg md:text-xl lg:text-2xl font-Montserrat font-semibold text-gray-800 mb-4">
+          The quick fox jumps over
+        </h3>
+        <ul className="space-y-4 text-sm md:text-base text-[#737373] font-Montserrat font-bold">
+          <li className="flex items-center gap-2">
+            <MdOutlineKeyboardArrowRight />
+            The quick fox jumps over the lazy dog
+          </li>
+          <li className="flex items-center gap-2">
+            <MdOutlineKeyboardArrowRight />
+            The quick fox jumps over the lazy dog
+          </li>
+          <li className="flex items-center gap-2">
+            <MdOutlineKeyboardArrowRight />
+            The quick fox jumps over the lazy dog
+          </li>
+          <li className="flex items-center gap-2">
+            <MdOutlineKeyboardArrowRight />
+            The quick fox jumps over the lazy dog
+          </li>
+        </ul>
       </div>
-      
 
-
-        </div>
-
+      {/* Second List */}
+      <div>
+        <h3 className="text-lg md:text-xl lg:text-2xl font-Montserrat font-semibold text-gray-800">
+          The quick fox jumps over
+        </h3>
+        <ul className="space-y-4 text-sm md:text-base text-[#737373] font-Montserrat font-bold">
+          <li className="flex items-center gap-2">
+            <MdOutlineKeyboardArrowRight />
+            The quick fox jumps over the lazy dog
+          </li>
+          <li className="flex items-center gap-2">
+            <MdOutlineKeyboardArrowRight />
+            The quick fox jumps over the lazy dog
+          </li>
+          <li className="flex items-center gap-2">
+            <MdOutlineKeyboardArrowRight />
+            The quick fox jumps over the lazy dog
+          </li>
+        </ul>
       </div>
+    </div>
+  </div>
+</div>
+
       <Footer />
     </>
   );
 }
 
 export default Pages;
-
 

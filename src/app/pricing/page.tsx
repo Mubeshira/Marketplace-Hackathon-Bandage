@@ -11,12 +11,13 @@ import {
     AccordionTrigger,
   } from "@/components/ui/accordion";
 import Footer from '@/components/Footer';
+import NewHeader from '@/components/NewHeader';
 
 function Pricing() {
     return (
 <>
         <div className='flex flex-col items-center bg-[#FFFFFF]'>
-            <Header2 />
+            <NewHeader />
             <div className='w-[870px] h-[280px]  mt-[13px] flex items-center justify-center'>
                 <div className='w-[427px] h-[180px]    flex-col flex items-center  mb-24 '>
                     <div className=' font-bold w-[71px] h-[24px] '>PRICING</div>
@@ -158,7 +159,7 @@ function Pricing() {
                     <Image src={"/desktop.png"} alt="desktop" width={1050} height={365} ></Image></div>
 
             </div>
-            <section className="py-16">
+            {/* <section className="py-16">
           <div className="container max-w-3xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Pricing FAQs</h2>
@@ -193,7 +194,44 @@ function Pricing() {
               <p className="text-gray-500">Havent got your answer? Contact our support</p>
             </div>
           </div>
-        </section>
+        </section> */}
+        <section className="py-16">
+  <div className="container max-w-3xl">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Pricing FAQs</h2>
+      <p className="text-gray-500 text-sm sm:text-base md:text-lg">
+        Problems trying to resolve the conflict between the two major realms of Classical physics
+      </p>
+    </div>
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>the quick fox jumps over the lazy dog</AccordionTrigger>
+        <AccordionContent>
+          Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM
+          RELIT Mollie. Excitation venial consequent sent nostrum met.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>the quick fox jumps over the lazy dog</AccordionTrigger>
+        <AccordionContent>
+          Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM
+          RELIT Mollie. Excitation venial consequent sent nostrum met.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>the quick fox jumps over the lazy dog</AccordionTrigger>
+        <AccordionContent>
+          Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM
+          RELIT Mollie. Excitation venial consequent sent nostrum met.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    <div className="text-center mt-8">
+      <p className="text-gray-500 text-sm sm:text-base md:text-lg">Havent got your answer? Contact our support</p>
+    </div>
+  </div>
+</section>
+
         <section className="py-16 bg-gray-50">
           <div className="container max-w-3xl text-center">
             <h2 className="text-3xl font-bold mb-4">Start your 14 days free trial</h2>
