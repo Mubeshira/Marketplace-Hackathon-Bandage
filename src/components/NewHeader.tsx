@@ -1,7 +1,6 @@
 
 
 
-
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -21,7 +20,7 @@ function NewHeader() {
     <>
       {/* Top Section */}
       <div className="bg-[#23856D] h-[58px] w-full">
-        <div className="flex justify-between items-center w-full h-full px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full h-full px-4 sm:px-6 lg:px-8 gap-2 sm:gap-0">
           {/* Left Section: Contact Info */}
           <div className="flex flex-wrap gap-2 sm:gap-4 items-center">
             <button className="flex items-center gap-2 text-white">
@@ -37,10 +36,12 @@ function NewHeader() {
               </span>
             </button>
           </div>
+
           {/* Center Section: Follow Us */}
           <h6 className="hidden md:block text-xs sm:text-sm font-semibold text-white text-center">
             Follow Us and get a chance to win 80% off
           </h6>
+
           {/* Right Section: Social Icons */}
           <div className="flex items-center gap-2 sm:gap-4">
             <h6 className="text-xs sm:text-sm text-white">Follow Us:</h6>
@@ -67,22 +68,23 @@ function NewHeader() {
           onClick={toggleSidebar}
         >
           {sidebarOpen ? "Close" : "Menu"}
-    
         </button>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-6 xl:gap-8 items-center">
           <Link href="/">
-          <Link href={"/"}> <h6 className="text-sm font-semibold text-[#252B42]">Home</h6></Link>
+            <h6 className="text-sm font-semibold text-[#252B42]">Home</h6>
           </Link>
           <IoIosArrowForward className="text-gray-500" />
-          <Link href={"/shops"}>  <h6 className="text-sm font-semibold text-[#BDBDBD]">Shop</h6></Link>
+          <Link href="/shops">
+            <h6 className="text-sm font-semibold text-[#BDBDBD]">Shop</h6>
+          </Link>
         </div>
       </div>
 
       {/* Sidebar Menu for Mobile */}
       {sidebarOpen && (
-        <div className="fixed top-0 left-0 w-[250px] h-[200px]  shadow-lg z-50 lg:hidden">
+        <div className="fixed top-0 left-0 w-[250px] h-[100vh] bg-white shadow-lg z-50 lg:hidden">
           <button
             className="absolute top-4 right-4 text-gray-600"
             onClick={toggleSidebar}
@@ -93,8 +95,10 @@ function NewHeader() {
             <Link href="/">
               <h6 className="text-lg font-semibold text-[#252B42]">Home</h6>
             </Link>
-           <Link href={"/shops"}> <h6 className="text-lg font-semibold text-[#BDBDBD]">Shop</h6></Link>
-           <UserButton/>
+            <Link href="/shops">
+              <h6 className="text-lg font-semibold text-[#BDBDBD]">Shop</h6>
+            </Link>
+            <UserButton />
           </nav>
         </div>
       )}
@@ -102,4 +106,4 @@ function NewHeader() {
   );
 }
 
-export default NewHeader;
+export default NewHeader
