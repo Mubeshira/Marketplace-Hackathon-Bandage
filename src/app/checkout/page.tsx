@@ -127,13 +127,13 @@ export default function CheckoutForm() {
             </div>
             <div className="flex justify-between text-sm text-gray-600">
               <span>Delivery/Shipping</span>
-              <span>{shipCost > 0 ? `₹ ${shipCost.toFixed(2)}` : "Free"}</span>
+              <span>{shipCost > 0 ? `$ ${shipCost.toFixed(2)}` : "Free"}</span>
             </div>
             <div className="border-t pt-4">
               <div className="flex justify-between font-medium">
                 <span>Total</span>
                 {/* <span>₹ {totalAmount.toFixed(2)}</span> */}
-                <span>₹ {totalAmount}</span>
+                <span>$ {totalAmount}</span>
               </div>
             </div>
             <div className="pt-6 space-y-4">
@@ -143,7 +143,7 @@ export default function CheckoutForm() {
                   <div>
                     <p className="text-sm">{item.name}</p>
                     <p className="text-sm text-gray-500">Qty {item.quantity}</p>
-                    <p className="text-sm text-gray-500">₹ {item.price * item.quantity}</p>
+                    <p className="text-sm text-gray-500">$ {item.price * item.quantity}</p>
                   </div>
                 </div>
               ))}
