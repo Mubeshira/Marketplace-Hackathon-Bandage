@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import PostCreator from '@/components/comments';
 
 async function DynamicPage({
     searchParams,
@@ -59,6 +60,7 @@ async function DynamicPage({
                     </div>
                 </div>
             </section>
+            <PostCreator blog_id={0}/>
 
             <Footer />
         </div>

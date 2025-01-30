@@ -15,10 +15,12 @@ import aboutSection from './aboutPage-sections/aboutSection'
 import aboutImageSection from './aboutPage-sections/aboutImageSection'
 import meetTheTeamSection from './aboutPage-sections/meetTheTeamSection'
 import product from './product'
+import { comment } from './comment'
+
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [product, landingPage,
+  types: [ product, comment, landingPage,
      hero, 
      editorsPickSection,
      greenDivSection,
@@ -36,6 +38,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutSection,
     aboutImageSection,
     meetTheTeamSection,
+
+    
     
     ],
 }
