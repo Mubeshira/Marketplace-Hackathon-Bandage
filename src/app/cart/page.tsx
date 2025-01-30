@@ -206,6 +206,217 @@
 
 // code 
 
+// "use client";
+
+// import Image from "next/image";
+// import { Heart, Trash2 } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { Card, CardContent } from "@/components/ui/card";
+// import { Separator } from "@/components/ui/separator";
+// import Link from "next/link";
+// import { useRouter } from "next/navigation";
+// import { useEffect, useState } from "react";
+// import Header from "@/components/Header";
+
+// interface IProduct {
+//   name: string;
+//   price: string;
+//   description: string;
+//   image: string;
+//   quantity: number;
+// }
+
+// export default function ShoppingCart() {
+//   const router = useRouter();
+//   const [cartItems, setCartItems] = useState<IProduct[]>([]);
+
+//   // Handle client-side-only actions
+//   useEffect(() => {
+//     const cart = localStorage.getItem("cart");
+//     const updatedCart = cart ? JSON.parse(cart) : [];
+
+//     // Check if URL contains product data
+//     const params = new URLSearchParams(window.location.search);
+//     const name = params.get("name");
+//     const price = params.get("price");
+//     const description = params.get("description");
+//     const image = params.get("image");
+
+//     if (name && price && description && image) {
+//       const isDuplicate = updatedCart.some(
+//         (item: IProduct) => item.name === name
+//       );
+//       if (!isDuplicate) {
+//         updatedCart.push({
+//           name,
+//           price,
+//           description,
+//           image,
+//           quantity: 1,
+//         });
+//       }
+//       localStorage.setItem("cart", JSON.stringify(updatedCart));
+//       setCartItems(updatedCart);
+//       router.replace("/cart"); // Clean up query params
+//     } else {
+//       setCartItems(updatedCart);
+//     }
+//   }, [router]);
+
+//   // Remove an item from the cart
+//   const handleRemoveItem = (index: number) => {
+//     const updatedCart = [...cartItems];
+//     updatedCart.splice(index, 1);
+//     localStorage.setItem("cart", JSON.stringify(updatedCart));
+//     setCartItems(updatedCart);
+//   };
+
+//   // Update item quantity
+//   const handleQuantityChange = (index: number, quantity: number) => {
+//     if (quantity < 1) return; // Prevent invalid quantities
+//     const updatedCart = [...cartItems];
+//     updatedCart[index].quantity = quantity;
+//     localStorage.setItem("cart", JSON.stringify(updatedCart));
+//     setCartItems(updatedCart);
+//   };
+
+//   return (
+//     <>
+//       <Header />
+//       <div className="container mx-auto px-4 py-8 mt-[99px]">
+//         {/* Free Delivery Banner */}
+//         <div className="mb-8 bg-gray-50 p-4 rounded-lg">
+//           <p className="text-sm font-medium">Free Delivery</p>
+//           <p className="text-sm text-gray-600">
+//             Applies to orders of $70 or more.
+//           </p>
+//           <Link href="/shipment">
+//             <Button variant="link" className="text-sm">
+//               View details
+//             </Button>
+//           </Link>
+//         </div>
+
+//         <div className="grid lg:grid-cols-3 gap-8">
+//           {/* Cart Items */}
+//           <div className="lg:col-span-2">
+//             <h1 className="text-2xl font-medium mb-6">Your Cart</h1>
+//             <div className="space-y-6">
+//               {cartItems.length === 0 ? (
+//                 <p>Your cart is empty.</p>
+//               ) : (
+//                 cartItems.map((item, index) => (
+//                   <Card key={index}>
+//                     <CardContent className="p-6">
+//                       <div className="flex gap-6">
+//                         <div className="w-24 h-24 bg-gray-100 rounded-md">
+//                           <Image
+//                             src={item.image}
+//                             alt={item.name}
+//                             width={96}
+//                             height={96}
+//                             className="w-full h-full object-cover"
+//                           />
+//                         </div>
+//                         <div className="flex-1">
+//                           <div className="flex justify-between">
+//                             <div>
+//                               <h3 className="font-medium">{item.name}</h3>
+//                               <p className="text-sm text-gray-600">
+//                                 {item.description}
+//                               </p>
+//                               <div className="mt-2 space-y-1">
+//                                 <p className="text-sm">Quantity:</p>
+//                                 <input
+//                                   type="number"
+//                                   min={1}
+//                                   value={item.quantity}
+//                                   onChange={(e) =>
+//                                     handleQuantityChange(index, +e.target.value)
+//                                   }
+//                                   className="bg-slate-200 rounded pl-2 text-black w-12"
+//                                 />
+//                               </div>
+//                             </div>
+//                             <p className="text-sm text-black">
+//                               $ {(+item.price * item.quantity).toFixed(2)}
+//                             </p>
+//                           </div>
+//                           <div className="flex gap-4 mt-4">
+//                             <Button variant="ghost" size="sm">
+//                               <Heart className="w-4 h-4" />
+//                             </Button>
+//                             <Button
+//                               variant="ghost"
+//                               size="sm"
+//                               onClick={() => handleRemoveItem(index)}
+//                             >
+//                               <Trash2 className="w-4 h-4" />
+//                             </Button>
+//                           </div>
+//                         </div>
+//                       </div>
+//                     </CardContent>
+//                   </Card>
+//                 ))
+//               )}
+//             </div>
+//           </div>
+
+//           {/* Summary Section */}
+//           <div className="mt-14">
+//             <Card className="sticky top-8">
+//               <CardContent className="p-6">
+//                 <h2 className="text-xl font-medium mb-4">Summary</h2>
+//                 <div className="space-y-4">
+//                   <div className="flex justify-between">
+//                     <span className="text-sm">Subtotal</span>
+//                     <span className="text-sm">
+//                       ${" "}
+//                       {cartItems
+//                         .reduce(
+//                           (total, item) =>
+//                             total + +item.price * item.quantity,
+//                           0
+//                         )
+//                         .toFixed(2)}
+//                     </span>
+//                   </div>
+//                   <div className="flex justify-between">
+//                   <span className="text-sm">Estimated Delivery & Handling</span>
+//                   <span className="text-sm">Free</span>
+//                 </div>
+//                   <Separator />
+//                   <div className="flex justify-between font-medium">
+//                     <span>Total</span>
+//                     <span>
+//                       ${" "}
+//                       {cartItems
+//                         .reduce(
+//                           (total, item) =>
+//                             total + +item.price * item.quantity,
+//                           0
+//                         )
+//                         .toFixed(2)}
+//                     </span>
+//                   </div>
+//                   <Link href="/checkout">
+//                     <Button className="w-full bg-[#23A6F0] hover:bg-[#23A6F0]/90">
+//                       Checkout
+//                     </Button>
+//                   </Link>
+//                 </div>
+//               </CardContent>
+//             </Card>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+
+// 
 "use client";
 
 import Image from "next/image";
@@ -230,12 +441,10 @@ export default function ShoppingCart() {
   const router = useRouter();
   const [cartItems, setCartItems] = useState<IProduct[]>([]);
 
-  // Handle client-side-only actions
   useEffect(() => {
     const cart = localStorage.getItem("cart");
     const updatedCart = cart ? JSON.parse(cart) : [];
 
-    // Check if URL contains product data
     const params = new URLSearchParams(window.location.search);
     const name = params.get("name");
     const price = params.get("price");
@@ -257,13 +466,12 @@ export default function ShoppingCart() {
       }
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       setCartItems(updatedCart);
-      router.replace("/cart"); // Clean up query params
+      router.replace("/cart");
     } else {
       setCartItems(updatedCart);
     }
   }, [router]);
 
-  // Remove an item from the cart
   const handleRemoveItem = (index: number) => {
     const updatedCart = [...cartItems];
     updatedCart.splice(index, 1);
@@ -271,9 +479,8 @@ export default function ShoppingCart() {
     setCartItems(updatedCart);
   };
 
-  // Update item quantity
   const handleQuantityChange = (index: number, quantity: number) => {
-    if (quantity < 1) return; // Prevent invalid quantities
+    if (quantity < 1) return;
     const updatedCart = [...cartItems];
     updatedCart[index].quantity = quantity;
     localStorage.setItem("cart", JSON.stringify(updatedCart));
@@ -284,8 +491,7 @@ export default function ShoppingCart() {
     <>
       <Header />
       <div className="container mx-auto px-4 py-8 mt-[99px]">
-        {/* Free Delivery Banner */}
-        <div className="mb-8 bg-gray-50 p-4 rounded-lg">
+        <div className="mb-8 bg-gray-50 p-4 rounded-lg text-center md:text-left">
           <p className="text-sm font-medium">Free Delivery</p>
           <p className="text-sm text-gray-600">
             Applies to orders of $70 or more.
@@ -297,19 +503,18 @@ export default function ShoppingCart() {
           </Link>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Cart Items */}
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="md:col-span-2">
             <h1 className="text-2xl font-medium mb-6">Your Cart</h1>
             <div className="space-y-6">
               {cartItems.length === 0 ? (
-                <p>Your cart is empty.</p>
+                <p className="text-center md:text-left">Your cart is empty.</p>
               ) : (
                 cartItems.map((item, index) => (
                   <Card key={index}>
-                    <CardContent className="p-6">
-                      <div className="flex gap-6">
-                        <div className="w-24 h-24 bg-gray-100 rounded-md">
+                    <CardContent className="p-4 md:p-6">
+                      <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                        <div className="w-full md:w-24 md:h-24 bg-gray-100 rounded-md overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -319,13 +524,13 @@ export default function ShoppingCart() {
                           />
                         </div>
                         <div className="flex-1">
-                          <div className="flex justify-between">
+                          <div className="flex flex-col md:flex-row justify-between">
                             <div>
                               <h3 className="font-medium">{item.name}</h3>
                               <p className="text-sm text-gray-600">
                                 {item.description}
                               </p>
-                              <div className="mt-2 space-y-1">
+                              <div className="mt-2 flex items-center gap-2">
                                 <p className="text-sm">Quantity:</p>
                                 <input
                                   type="number"
@@ -338,7 +543,7 @@ export default function ShoppingCart() {
                                 />
                               </div>
                             </div>
-                            <p className="text-sm text-black">
+                            <p className="text-sm text-black mt-2 md:mt-0">
                               $ {(+item.price * item.quantity).toFixed(2)}
                             </p>
                           </div>
@@ -363,8 +568,7 @@ export default function ShoppingCart() {
             </div>
           </div>
 
-          {/* Summary Section */}
-          <div>
+          <div className="mt-14 ">
             <Card className="sticky top-8">
               <CardContent className="p-6">
                 <h2 className="text-xl font-medium mb-4">Summary</h2>
@@ -374,25 +578,21 @@ export default function ShoppingCart() {
                     <span className="text-sm">
                       ${" "}
                       {cartItems
-                        .reduce(
-                          (total, item) =>
-                            total + +item.price * item.quantity,
-                          0
-                        )
+                        .reduce((total, item) => total + +item.price * item.quantity, 0)
                         .toFixed(2)}
                     </span>
                   </div>
+                  <div className="flex justify-between">
+                  <span className="text-sm">Estimated Delivery & Handling</span>
+                  <span className="text-sm">Free</span>
+                </div>
                   <Separator />
                   <div className="flex justify-between font-medium">
                     <span>Total</span>
                     <span>
                       ${" "}
                       {cartItems
-                        .reduce(
-                          (total, item) =>
-                            total + +item.price * item.quantity,
-                          0
-                        )
+                        .reduce((total, item) => total + +item.price * item.quantity, 0)
                         .toFixed(2)}
                     </span>
                   </div>
@@ -410,3 +610,4 @@ export default function ShoppingCart() {
     </>
   );
 }
+
