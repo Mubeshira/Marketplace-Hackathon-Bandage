@@ -105,7 +105,7 @@ function Header() {
             {/* Search Bar */}
             <div className="flex gap-4 items-center">
               <Link href="/login">
-                <span className="font-Montserrat text-blue-500 font-semibold">Login / Register</span>
+                <span className="font-Montserrat text-blue-500 font-semibold"></span>
               </Link>
 
               {/* Search Input */}
